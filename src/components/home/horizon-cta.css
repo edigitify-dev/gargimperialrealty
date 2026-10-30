@@ -1,0 +1,58 @@
+.horizon-cta { padding: 105px 0 48px; background: #f7f6f2; scroll-margin-top: 95px; }
+.horizon-panel { position: relative; isolation: isolate; display: flex; justify-content: space-between; align-items: center; gap: 30px; min-height: 250px; padding: 39px 44px; background: #123249; color: #fff; border: 1px solid #234358; border-radius: 4px; }
+.horizon-panel::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: radial-gradient(ellipse at 63% 100%, #42606c70, transparent 57%), linear-gradient(115deg, #ffffff03, transparent 50%); pointer-events: none; }
+.horizon-panel-detail { position: absolute; inset: 12px; z-index: -1; border: 1px solid #d4bd8f25; border-radius: 1px; pointer-events: none; }
+.horizon-panel-detail::before, .horizon-panel-detail::after { content: ''; position: absolute; width: 38px; height: 1px; background: #d4bd8f; opacity: .6; }
+.horizon-panel-detail::before { top: -1px; left: -1px; }
+.horizon-panel-detail::after { bottom: -1px; right: -1px; }
+.horizon-light-sweep { position: absolute; inset: 1px; z-index: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
+.horizon-light-sweep > span { display: block; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, #e9d7ac0c 48%, #e9d7ac16 50%, transparent 63%); }
+.horizon-invitation { position: relative; z-index: 2; width: 43%; }
+.horizon-invitation h2 { font-size: clamp(32px, 3.1vw, 44px); font-weight: 450; line-height: 1.1; }
+.horizon-title-line { display: block; overflow: clip; padding-bottom: .08em; margin-bottom: -.08em; }
+.horizon-title-line > span { display: block; }
+.horizon-title-accent { color: #e4d1aa; }
+.horizon-description { max-width: 320px; font-size: 11px; line-height: 1.8; color: #becdd6; margin-top: 17px; }
+.horizon-architecture { position: absolute; right: 240px; bottom: 0; width: 330px; height: 355px; z-index: 1; pointer-events: none; }
+.horizon-architecture img { object-fit: contain; object-position: center bottom; transform: scale(1.08); transform-origin: center bottom; filter: drop-shadow(0 12px 12px #06172338); }
+.horizon-actions { position: relative; z-index: 2; display: flex; align-items: center; flex-direction: column; gap: 13px; }
+.horizon-book { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 49px; border: 1px solid #dfcba5; background: #dfcba5; color: #153146; padding: 14px 18px; font-size: 11px; font-weight: 650; transition: background .25s, border-color .25s; }
+.horizon-book:hover { background: #f2e2c4; border-color: #f2e2c4; }
+.horizon-book svg { transition: transform .25s; }
+.horizon-book:hover svg { transform: translate(2px, -2px); }
+.horizon-book:focus-visible { outline-color: #eed7af; outline-offset: 5px; }
+.horizon-actions:focus-within { opacity: 1 !important; transform: none !important; }
+@media (max-width: 1100px) {
+  .horizon-panel { padding: 35px; }
+  .horizon-architecture { right: 198px; width: 280px; height: 330px; }
+  .horizon-book { gap: 17px; padding-inline: 14px; }
+  .horizon-description { max-width: 240px; }
+}
+@media (max-width: 960px) {
+  .horizon-panel { min-height: 290px; align-items: flex-start; }
+  .horizon-invitation { width: 55%; }
+  .horizon-architecture { right: 22px; width: 250px; height: 340px; }
+  .horizon-actions { position: absolute; left: 35px; bottom: 29px; flex-direction: row; gap: 15px; }
+  .horizon-description { margin-top: 13px; }
+}
+/* Keep the invitation, architecture and action in separate rows on mobile. */
+@media (max-width: 760px) {
+  .horizon-cta { padding: 64px 0 32px; scroll-margin-top: 94px; }
+  .horizon-cta > .container { width: calc(100% - 40px); }
+  .horizon-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; min-height: 0; padding: 36px 24px 24px; overflow: clip; border-radius: 6px; }
+  .horizon-panel-detail { inset: 10px; }
+  .horizon-invitation { width: 100%; text-align: center; }
+  .horizon-invitation h2 { font-size: clamp(34px, 10vw, 48px); line-height: 1.12; }
+  .horizon-description { max-width: 240px; margin: 16px auto 0; font-size: 12px; line-height: 1.8; text-wrap: balance; }
+  .horizon-architecture { position: relative; inset: auto; width: min(240px, 100%); height: 250px; margin: -4px auto -24px; }
+  .horizon-architecture img { transform: none; }
+  .horizon-actions { position: relative; inset: auto; width: 100%; flex-direction: column; gap: 0; }
+  .horizon-book { width: 100%; min-height: 52px; padding: 16px 20px; font-size: 12px; border-radius: 2px; }
+  .horizon-light-sweep { display: none; }
+  .horizon-panel, .horizon-architecture, .horizon-title-line > span,
+  .horizon-description, .horizon-actions, .horizon-panel-detail { transform: none !important; opacity: 1 !important; clip-path: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .horizon-panel, .horizon-architecture, .horizon-title-line > span, .horizon-description, .horizon-actions, .horizon-panel-detail { transform: none !important; opacity: 1 !important; clip-path: none !important; }
+  .horizon-light-sweep { display: none; }
+}

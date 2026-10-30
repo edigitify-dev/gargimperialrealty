@@ -1,0 +1,17 @@
+.brand { display: inline-flex; align-items: center; gap: 12px; flex-shrink: 0; }
+.brand svg { width: 36px; height: 47px; }
+.brand > span { font-family: var(--serif); font-size: 16px; font-weight: 500; line-height: 1.25; }
+.brand-sub { display: block; font-family: var(--sans); font-size: 8px; margin-top: 7px; }
+
+@media (max-width: 1200px) {
+  .brand > span { font-size: 13px; }
+  .brand-sub { font-size: 7px; }
+  .brand svg { width: 32px; }
+}
+
+@media (max-width: 760px) {
+  .brand { gap: 9px; }
+  .brand svg { width: 28px; height: 39px; }
+  .brand > span { font-size: 13px; }
+  .brand-sub { font-size: 6px; margin-top: 5px; }
+}

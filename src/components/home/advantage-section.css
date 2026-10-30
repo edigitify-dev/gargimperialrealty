@@ -1,0 +1,67 @@
+.imperial-advantage {
+  --advantage-gold: #d4bf94;
+  --advantage-soft: #b4c4cf;
+  position: relative;
+  padding: 100px 0;
+  scroll-margin-top: 90px;
+  background: #102d43;
+  color: #f6f5ef;
+  overflow: hidden;
+}
+.imperial-advantage::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 0% 70%, #274b5b60, transparent 65%); pointer-events: none; }
+.imperial-advantage > .container { position: relative; }
+.advantage-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 60px; margin-bottom: 56px; }
+.advantage-heading h2 { font-size: clamp(42px, 4.9vw, 70px); font-weight: 450; line-height: 1.1; }
+.advantage-heading h2 .kinetic-line-accent { color: var(--advantage-soft); }
+.advantage-heading-copy { max-width: 300px; padding-bottom: 6px; color: var(--advantage-soft); font-size: 13px; line-height: 1.95; }
+.advantage-experience { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(40px, 6vw, 90px); align-items: center; }
+.advantage-landscape { position: relative; margin: 0; min-width: 0; aspect-ratio: 1.08; overflow: hidden; background: #294350; }
+.advantage-landscape .image-reveal-content > img { object-position: 52% center; }
+.advantage-image-wash { position: absolute; inset: 0; background: linear-gradient(180deg, #0a213a45, transparent 35%, #091e2ccf); }
+.advantage-landscape::after { content: ''; position: absolute; inset: 13px; border: 1px solid #ffffff35; pointer-events: none; }
+.advantage-landscape figcaption { position: absolute; bottom: 33px; left: 33px; right: 28px; }
+.advantage-image-line { display: block; width: 32px; height: 1px; background: var(--advantage-gold); margin-bottom: 20px; }
+.advantage-landscape figcaption p { font-size: clamp(25px, 2.6vw, 37px); font-weight: 450; line-height: 1.2; }
+.advantage-principles { min-width: 0; }
+.advantage-principle { border-top: 1px solid #ffffff29; transition: border-color .3s; }
+.advantage-principle:last-child { border-bottom: 1px solid #ffffff29; }
+.advantage-principle.is-open { border-top-color: var(--advantage-gold); }
+.advantage-principle h3 { margin: 0; font-size: clamp(15px, 1.45vw, 20px); font-weight: 450; line-height: 1.5; }
+.advantage-principle button { display: grid; grid-template-columns: 38px minmax(0, 1fr) 17px; gap: 13px; align-items: center; width: 100%; border: 0; padding: 23px 0; background: transparent; color: #d2dce2; text-align: left; transition: color .25s; }
+.advantage-principle button:hover, .advantage-principle.is-open button { color: white; }
+.advantage-principle button:focus-visible, .advantage-conversation:focus-visible { outline-color: var(--advantage-gold); outline-offset: 5px; }
+.advantage-principle-icon { display: flex; align-items: center; color: var(--advantage-soft); transition: color .25s; }
+.advantage-principle.is-open .advantage-principle-icon { color: var(--advantage-gold); }
+.advantage-expand-icon { transition: transform .3s, color .3s; }
+.advantage-principle.is-open .advantage-expand-icon { transform: rotate(45deg); color: var(--advantage-gold); }
+.advantage-answer { padding: 0 30px 26px 51px; }
+.advantage-answer > p:last-child { max-width: 350px; font-size: 12px; line-height: 1.95; color: var(--advantage-soft); }
+.advantage-conversation { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding-top: 28px; font-size: 12px; color: #f3e7cf; }
+.advantage-cta-icon { display: grid; place-items: center; width: 43px; height: 43px; flex-shrink: 0; border: 1px solid #d4bf9470; border-radius: 50%; transition: background .25s, color .25s, transform .25s; }
+.advantage-conversation:hover .advantage-cta-icon { background: var(--advantage-gold); color: #102d43; transform: translate(2px, -2px); }
+@media (max-width: 1100px) {
+  .imperial-advantage { padding-top: 75px; }
+  .advantage-experience { gap: 35px; }
+  .advantage-landscape { aspect-ratio: .88; }
+  .advantage-heading-copy { max-width: 255px; font-size: 12px; }
+  .advantage-principle button { grid-template-columns: 28px minmax(0, 1fr) 17px; gap: 10px; }
+  .advantage-answer { padding-left: 38px; }
+}
+@media (max-width: 760px) {
+  .imperial-advantage { padding: 60px 0; scroll-margin-top: 74px; }
+  .advantage-heading { display: block; margin-bottom: 32px; }
+  .advantage-heading h2 { font-size: clamp(38px, 8.7vw, 59px); }
+  .advantage-heading-copy { margin-top: 22px; max-width: 360px; padding: 0; font-size: 12px; }
+  .advantage-experience { grid-template-columns: 1fr; gap: 35px; }
+  .advantage-landscape { aspect-ratio: 1.15; }
+  .advantage-landscape figcaption { bottom: 28px; left: 28px; }
+  .advantage-landscape figcaption p { font-size: clamp(26px, 6vw, 35px); }
+  .advantage-image-line { margin-bottom: 16px; }
+  .advantage-principle h3 { font-size: 16px; }
+  .advantage-principle button { padding: 22px 0; }
+  .advantage-answer { padding-right: 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .advantage-heading, .advantage-landscape, .advantage-principles { opacity: 1 !important; transform: none !important; }
+}

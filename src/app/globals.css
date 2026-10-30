@@ -1,0 +1,72 @@
+@import "tailwindcss";
+@theme inline { --color-imperial: #183a58; --color-ice: #eaf1f6; --font-sans: var(--font-manrope); --font-serif: var(--font-bodoni-moda); }
+:root { --navy: #183a58; --dark: #102b42; --ice: #eaf1f6; --steel: #a9bccb; --line: #dce5eb; --muted: #697780; --sans: var(--font-manrope); --serif: var(--font-bodoni-moda); }
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 105px; }
+body { margin: 0; color: var(--navy); background: #fff; font-family: var(--sans); font-size: 14px; -webkit-font-smoothing: antialiased; }
+button, input, select, textarea { font: inherit; }
+button, a, select { -webkit-tap-highlight-color: transparent; }
+button { cursor: pointer; }
+a { text-decoration: none; color: inherit; }
+button { color: inherit; }
+button:disabled { cursor: default; }
+button, input, select, textarea { border-radius: 0; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #5d89aa; outline-offset: 5px; }
+::selection { background: #c7d9e6; color: var(--dark); }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 500; font-optical-sizing: auto; }
+img { object-fit: cover; }
+em { font-family: var(--serif); font-weight: 400; }
+.container { width: min(1280px, calc(100% - 128px)); margin-inline: auto; }
+.section { padding: 100px 0; scroll-margin-top: 80px; }
+.eyebrow { font-size: 9px; font-weight: 700; line-height: 1.7; }
+h2 { font-weight: 500; font-size: clamp(35px, 4.2vw, 59px); line-height: 1.16; }
+h2 em { font-size: 1.08em; }
+.muted { color: var(--muted); font-size: 13px; line-height: 1.95; }
+.button { display: inline-flex; justify-content: space-between; align-items: center; gap: 28px; min-height: 49px; padding: 15px 23px; border: 1px solid transparent; border-radius: 3px; font-size: 11px; font-weight: 600; transition: background .25s, color .25s, transform .25s, box-shadow .25s; }
+.button svg, .text-link svg { flex-shrink: 0; transition: transform .25s; }
+.button:hover svg, .text-link:hover svg { transform: translate(3px, -3px); }
+.primary { background: var(--navy); color: white; }
+.primary:hover { background: var(--dark); box-shadow: 0 6px 22px #102b4215; }
+.white { color: var(--navy); background: white; }
+.white:hover { background: var(--ice); }
+.text-link { font-size: 11px; font-weight: 650; display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; padding: 12px 0; border: 0; border-bottom: 1px solid #a9bccb; background: transparent; }
+.skip-link { position: fixed; top: -60px; left: 20px; padding: 15px; z-index: 100; background: white; }
+.skip-link:focus { top: 15px; }
+.section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 50px; margin-bottom: 42px; }
+.section-heading .eyebrow { margin-bottom: 20px; }
+.heading-aside { font-size: 11px; line-height: 1.9; color: var(--muted); max-width: 300px; padding-bottom: 4px; }
+.heading-aside .text-link { color: var(--navy); margin-top: 15px; }
+.scroll-reveal { position: relative; }
+.scroll-reveal:focus-within { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+.form-note { font-size: 9px; color: var(--muted); line-height: 1.8; }
+
+@media (max-width: 1200px) {
+  .container { width: calc(100% - 88px); }
+}
+
+@media (max-width: 960px) {
+  .section { padding: 75px 0; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 80px; }
+  .container { width: calc(100% - 44px); }
+  .section { padding: 60px 0; scroll-margin-top: 65px; }
+  h2 { font-size: 39px; }
+  .eyebrow { font-size: 8px; }
+  .section-heading { flex-direction: column; align-items: flex-start; gap: 23px; margin-bottom: 30px; }
+  .section-heading .eyebrow { margin-bottom: 17px; }
+  .heading-aside { font-size: 11px; max-width: 100%; }
+  .heading-aside .text-link { margin-top: 10px; }
+}
+
+@media (max-width: 380px) {
+  h2 { font-size: 34px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scroll-reveal { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}

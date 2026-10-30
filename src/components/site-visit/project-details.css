@@ -1,0 +1,17 @@
+.detail-image { position: relative; height: 320px; }
+.detail-content { padding: 30px 40px 40px; }
+.dialog .detail-content h2 { margin-top: 10px; }
+.detail-location { display: flex; align-items: center; gap: 7px; font-size: 11px; color: var(--muted); margin-top: 17px; }
+.detail-content > .muted { margin: 23px 0; }
+.detail-facts { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.detail-facts > div { display: flex; flex-direction: column; gap: 9px; }
+.detail-facts span { font-size: 7px; color: var(--muted); }
+.detail-facts strong { font-size: 12px; font-weight: 600; }
+.detail-content > .form-note { margin: 20px 0; }
+
+@media (max-width: 760px) {
+  .detail-image { height: 240px; }
+  .detail-content { padding: 25px 23px 30px; }
+  .detail-facts { gap: 15px; }
+  .detail-facts strong { font-size: 10px; }
+}

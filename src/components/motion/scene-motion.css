@@ -1,0 +1,36 @@
+.kinetic-text { position: relative; }
+.kinetic-line { display: block; }
+.kinetic-word-mask { display: inline-block; overflow: clip; vertical-align: top; padding: .15em .08em .19em; margin: -.15em -.08em -.19em; }
+.kinetic-word { display: inline-block; transform-origin: left bottom; }
+.kinetic-line-italic { font-family: var(--serif); font-style: italic; font-size: 1.08em; font-weight: 400; }
+.motion-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+.image-reveal { position: relative; isolation: isolate; overflow: clip; perspective: 1100px; }
+.image-reveal-content { position: relative; width: 100%; height: 100%; transform-origin: center 65%; }
+.image-shutters { position: absolute; inset: 0; overflow: hidden; z-index: 4; pointer-events: none; }
+.image-shutter { position: absolute; top: 0; bottom: 0; width: calc(33.333% + 1px); background: #fff; border-right: 1px solid #dce5eb; }
+.image-shutter-exit { background: #eaf1f6; }
+.image-blueprint-scan { position: absolute; inset: 0; z-index: 4; pointer-events: none; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), #9eae9940 calc(25% - 1px), #9eae9940 25%); }
+.image-blueprint-scan > span { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #8d9f88b3; box-shadow: 0 0 25px 12px #cedcc145; }
+.image-reveal-aperture figcaption { opacity: calc(clamp(0, (var(--scene-enter, 1) - .32) * 1.7, 1) * (1 - var(--scene-exit, 0))); transform: translateY(calc((1 - clamp(0, (var(--scene-enter, 1) - .32) * 1.7, 1)) * 28px - var(--scene-exit, 0) * 18px)); }
+.image-reveal-aperture::after { transform: scaleX(clamp(0, var(--scene-enter, 1) * 1.25, 1)); transform-origin: left; }
+.motion-sequence > * { --item-index: 0; --item-in: clamp(0, (var(--scene-enter, 1) - var(--item-index) * .075) * 1.6, 1); opacity: calc(var(--item-in) * (1 - var(--scene-exit, 0))); transform: perspective(900px) translate3d(0, calc((1 - var(--item-in)) * 34px - var(--scene-exit, 0) * 26px), 0) rotateX(calc((1 - var(--item-in)) * -7deg)); transform-origin: center bottom; }
+.motion-sequence > :nth-child(2) { --item-index: 1; }
+.motion-sequence > :nth-child(3) { --item-index: 2; }
+.motion-sequence > :nth-child(4) { --item-index: 3; }
+.motion-sequence > :nth-child(5) { --item-index: 4; }
+.motion-sequence > :nth-child(6) { --item-index: 5; }
+.scene-editorial > p:not(.kinetic-text), .scene-editorial .folio-heading-note, .scene-editorial .testimonials-navigation, .scene-editorial .testimonials-story figcaption, .scene-editorial .advantage-conversation { --copy-in: clamp(0, (var(--scene-enter, 1) - .12) * 1.45, 1); opacity: calc(var(--copy-in) * (1 - var(--scene-exit, 0))); transform: translateY(calc((1 - var(--copy-in)) * 22px - var(--scene-exit, 0) * 20px)); }
+.image-reveal-blueprint .plan-point { --pin-index: 0; --pin-in: clamp(0, (var(--scene-enter, 1) - var(--pin-index) * .1) * 2, 1); opacity: calc(var(--pin-in) * (1 - var(--scene-exit, 0))); transform: translate(-50%, -50%) scale(calc(var(--pin-in) * var(--pin-active, 1))); }
+.image-reveal-blueprint .plan-point:nth-of-type(2) { --pin-index: 1; }
+.image-reveal-blueprint .plan-point:nth-of-type(3) { --pin-index: 2; }
+.image-reveal-blueprint .plan-point:nth-of-type(4) { --pin-index: 3; }
+.image-reveal-blueprint .plan-point.is-active { --pin-active: 1.1; }
+.scroll-reveal:focus-within, .image-reveal:focus-within { --scene-enter: 1 !important; --scene-exit: 0 !important; }
+.scroll-reveal:focus-within .kinetic-word { opacity: 1 !important; transform: none !important; filter: none !important; }
+.scroll-reveal:focus-within .motion-sequence > *, .motion-sequence:focus-within > *, .image-reveal:focus-within, .image-reveal:focus-within .image-reveal-content { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+.image-reveal:focus-within .image-shutters, .image-reveal:focus-within .image-blueprint-scan { visibility: hidden; }
+@media (prefers-reduced-motion: reduce) {
+  .scene-editorial, .image-reveal, .scroll-reveal { --scene-enter: 1 !important; --scene-exit: 0 !important; }
+  .kinetic-word, .image-reveal, .image-reveal-content, .image-reveal figcaption, .motion-sequence > * { opacity: 1 !important; transform: none !important; clip-path: none !important; filter: none !important; }
+  .image-shutters, .image-blueprint-scan { display: none; }
+}

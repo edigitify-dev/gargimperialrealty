@@ -1,0 +1,47 @@
+.masterplan-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 65px; align-items: center; }
+.masterplan-copy h2 { font-size: clamp(33px,3.6vw,50px); margin-top: 0; }
+.masterplan-copy > .muted { margin: 24px 0; max-width: 330px; }
+.plan-list { margin-top: 25px; }
+.plan-list button { width: 100%; display: flex; align-items: center; text-align: left; gap: 14px; font-size: 10px; padding: 15px 0; border: 0; border-bottom: 1px solid var(--line); background: none; transition: padding .25s; }
+.plan-list button > span { font-size: 8px; color: #8b9dab; }
+.plan-list button > svg { margin-left: auto; }
+.plan-list button.is-active { font-weight: 700; padding-left: 8px; }
+.plan-visual { min-width: 0; }
+.plan-image { position: relative; aspect-ratio: 1.14; background: #f2f3ed; border: 1px solid #e5e9e5; overflow: hidden; }
+.plan-image > img { object-fit: cover; }
+.plan-point { position: absolute; width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; background: #ffffffed; border: 1px solid #183a5860; box-shadow: 0 0 0 6px #ffffff50; transition: background .25s, transform .25s; transform: translate(-50%, -50%); }
+.plan-point.is-active { color: white; background: var(--navy); transform: translate(-50%, -50%) scale(1.1); }
+.plan-tooltip { position: absolute; bottom: 16px; left: 16px; right: 16px; background: #ffffffed; backdrop-filter: blur(8px); display: flex; gap: 15px; padding: 19px; border: 1px solid #e1e5df; border-radius: 2px; }
+.tooltip-number { font-size: 10px; color: #8b9dab; padding-top: 3px; }
+.plan-tooltip strong { font-size: 11px; font-weight: 650; }
+.plan-tooltip p { font-size: 9px; color: var(--muted); margin-top: 5px; line-height: 1.7; }
+.plan-north { position: absolute; right: 19px; top: 17px; display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 8px; }
+
+@media (max-width: 1200px) {
+  .masterplan-layout { gap: 40px; }
+}
+
+@media (max-width: 960px) {
+  .masterplan-layout { grid-template-columns: .85fr 1.15fr; gap: 30px; }
+  .masterplan-copy h2 { font-size: 32px; }
+  .masterplan-copy > .muted { font-size: 11px; }
+  .plan-tooltip { padding: 13px; gap: 9px; bottom: 9px; left: 9px; right: 9px; }
+  .plan-tooltip p { font-size: 8px; }
+  .plan-tooltip strong { font-size: 9px; }
+  .plan-image { aspect-ratio: .9; }
+}
+
+@media (max-width: 760px) {
+  .masterplan-layout { grid-template-columns: 1fr; gap: 30px; }
+  .masterplan-copy h2 { font-size: 40px; margin-top: 0; }
+  .masterplan-copy > .muted { font-size: 12px; }
+  .plan-list button { font-size: 11px; }
+  .plan-image { aspect-ratio: .95; }
+  .plan-tooltip { left: 12px; right: 12px; bottom: 12px; padding: 15px; }
+  .plan-tooltip strong { font-size: 11px; }
+  .plan-tooltip p { font-size: 9px; }
+}
+
+@media (max-width: 380px) {
+  .masterplan-copy h2 { font-size: 34px; }
+}

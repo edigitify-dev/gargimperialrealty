@@ -1,0 +1,118 @@
+.project-folio { padding: 90px 0 100px; scroll-margin-top: 92px; }
+.folio-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; margin: 52px 0 43px; }
+.folio-heading h2 { font-size: clamp(48px, 6.4vw, 91px); line-height: 1.02; font-weight: 450; }
+.folio-heading-note { padding: 0 0 4px; min-width: 230px; }
+.folio-heading-note > button { display: flex; align-items: center; justify-content: space-between; gap: 30px; border: 0; border-bottom: 1px solid #b5c4cf; padding: 12px 0; margin-top: 14px; background: none; font-size: 10px; width: 100%; }
+.folio-heading-note button svg { transition: transform .3s; }
+.folio-heading-note button:hover svg { transform: translate(3px, -3px); }
+.folio-status { display: flex; align-items: center; justify-content: flex-end; gap: 20px; padding: 14px 0; border-top: 1px solid var(--line); font-size: 7px; }
+.folio-status > button { display: flex; align-items: center; gap: 9px; border: 0; background: none; padding: 0; font-size: 9px; }
+.folio-status > button > span { margin-left: 13px; color: #72818d; text-decoration: underline; text-underline-offset: 3px; }
+.folio-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, .43fr); column-gap: 65px; }
+.folio-sidebar { grid-column: 2; grid-row: 1; padding-top: 24px; display: flex; flex-direction: column; }
+.folio-index { border-top: 1px solid var(--line); }
+.folio-tab { position: relative; width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 21px; align-items: start; gap: 15px; border: 0; border-bottom: 1px solid var(--line); padding: 25px 0 23px; background: none; text-align: left; color: #8a99a4; transition: color .3s; }
+.folio-tab::after { content: ''; position: absolute; height: 1px; width: 100%; background: var(--navy); left: 0; bottom: -1px; transform: scaleX(0); transform-origin: left; transition: transform .6s cubic-bezier(.22,1,.36,1); }
+.folio-tab.is-active::after { transform: scaleX(1); }
+.folio-tab:hover, .folio-tab.is-active, .folio-tab:focus-visible { color: var(--navy); }
+.folio-tab-copy { min-width: 0; }
+.folio-tab-name { font-size: clamp(22px, 2vw, 29px); line-height: 1.2; font-weight: 450; display: block; transition: transform .4s; }
+.folio-tab-last-word { display: block; }
+.folio-tab:hover .folio-tab-name { transform: translateX(4px); }
+.folio-tab-location { display: block; font-size: 8px; color: #8796a1; margin-top: 11px; }
+.folio-tab-arrow { margin-top: 5px; opacity: 0; transform: translate(-5px, 5px); transition: opacity .3s, transform .4s; }
+.folio-tab.is-active .folio-tab-arrow, .folio-tab:hover .folio-tab-arrow { opacity: 1; transform: translate(0,0); }
+.folio-pagination { display: flex; align-items: center; justify-content: flex-end; padding-top: 22px; }
+.folio-pagination > div { display: flex; gap: 9px; }
+.folio-pagination button { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 50%; background: white; transition: color .25s, background .25s; }
+.folio-pagination button:hover:not(:disabled) { background: var(--navy); color: white; }
+.folio-pagination button:disabled { opacity: .3; }
+.folio-feature { min-width: 0; grid-column: 1; grid-row: 1; }
+.folio-image { display: block; position: relative; width: 100%; aspect-ratio: 1.27; overflow: hidden; isolation: isolate; padding: 0; background: #e7edf0; border: 0; text-align: left; }
+.folio-image-slide { position: absolute; inset: 0; }
+.folio-image-parallax { position: absolute; inset: -26px; }
+.folio-image-parallax img { transition: scale 1.1s cubic-bezier(.22,1,.36,1); }
+.folio-image:hover img { scale: 1.035; }
+.folio-image-shade { position: absolute; inset: 50% 0 0; pointer-events: none; background: linear-gradient(transparent, #0b243e70); z-index: 1; }
+.folio-image-action { position: absolute; z-index: 2; bottom: 30px; right: 30px; display: flex; align-items: center; gap: 18px; color: white; }
+.folio-image-action > span { font-size: 11px; }
+.folio-image-action > svg { transition: transform .4s; }
+.folio-image:hover .folio-image-action > svg { transform: translate(4px, -4px); }
+.folio-details { display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; padding-top: 25px; min-height: 138px; }
+.folio-detail-copy { min-width: 0; }
+.folio-location { font-size: 8px; color: #7d8c96; display: flex; align-items: center; gap: 5px; margin-bottom: 10px; }
+.folio-details h3 { font-size: clamp(22px, 2.7vw, 38px); font-weight: 450; line-height: 1.2; }
+.folio-development-type { font-size: 9px; color: #83919b; margin-top: 9px; }
+.folio-plot-size { flex-shrink: 0; text-align: right; border-left: 1px solid var(--line); padding-left: 24px; }
+.folio-plot-size > span { display: block; font-size: 10px; color: #81939f; margin-bottom: 8px; }
+.folio-plot-size > strong { font-size: 19px; font-weight: 500; }
+.folio-plot-size small { font-size: 9px; font-weight: 400; }
+.folio-plot-size > button { display: flex; justify-content: flex-end; align-items: center; gap: 18px; width: 100%; background: none; border: 0; padding: 12px 0 0; font-size: 9px; }
+.folio-plot-size > button svg { transition: transform .3s; }
+.folio-plot-size > button:hover svg { transform: translate(3px, -3px); }
+.folio-empty { padding: 80px 20px; text-align: center; background: #f4f7f9; }
+.folio-empty h3 { font-size: 44px; font-weight: 450; line-height: 1.2; margin: 23px 0; }
+.folio-empty > p { font-size: 12px; color: #7a8995; line-height: 1.8; margin-bottom: 20px; }
+
+@media (max-width: 1200px) {
+  .folio-layout { column-gap: 40px; grid-template-columns: minmax(0, 1fr) minmax(240px, .47fr); }
+  .folio-tab { gap: 10px; padding: 21px 0; }
+  .folio-tab-name { font-size: 23px; }
+  .folio-image { aspect-ratio: 1.05; }
+  .folio-details h3 { font-size: 27px; }
+  .folio-plot-size { padding-left: 18px; }
+}
+@media (max-width: 900px) {
+  .project-folio { padding: 65px 0 70px; }
+  .folio-heading { margin-top: 38px; }
+  .folio-heading h2 { font-size: 65px; }
+  .folio-heading-note { min-width: 180px; }
+  .folio-layout { grid-template-columns: 1fr; }
+  .folio-sidebar { grid-column: 1; grid-row: 1; padding-top: 9px; }
+  .folio-index { display: flex; border-top: 0; margin-bottom: 24px; }
+  .folio-tab { padding: 17px 12px; grid-template-columns: 1fr; gap: 10px; }
+  .folio-tab:first-child { padding-left: 0; }
+  .folio-tab-arrow { display: none; }
+  .folio-tab-name { font-size: 19px; }
+  .folio-tab-location { font-size: 7px; margin-top: 8px; }
+  .folio-feature { grid-column: 1; grid-row: 2; }
+  .folio-image { aspect-ratio: 1.45; }
+  .folio-pagination { padding-top: 0; padding-bottom: 17px; }
+  .folio-pagination button { width: 30px; height: 30px; }
+  .folio-details { min-height: 125px; }
+}
+@media (max-width: 600px) {
+  .project-folio { padding: 55px 0 60px; scroll-margin-top: 74px; }
+  .folio-heading { margin: 33px 0 28px; display: block; }
+  .folio-heading h2 { font-size: clamp(44px, 12vw, 64px); }
+  .folio-heading-note { margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+  .folio-heading-note > button { font-size: 8px; width: auto; gap: 12px; margin-top: 0; padding: 10px 0; }
+  .folio-status { flex-wrap: wrap; padding: 13px 0 0; font-size: 6px; gap: 12px; }
+  .folio-status > button { font-size: 8px; gap: 7px; }
+  .folio-status > button > span { margin-left: 5px; }
+  .folio-tab { grid-template-columns: 1fr; padding: 18px 6px 16px; gap: 9px; }
+  .folio-tab-name { font-size: clamp(13px, 3.8vw, 19px); line-height: 1.3; }
+  .folio-tab-location { font-size: 6px; line-height: 1.6; margin-top: 8px; }
+  .folio-index { margin-bottom: 17px; }
+  .folio-pagination { padding-bottom: 15px; }
+  .folio-image { aspect-ratio: .98; }
+  .folio-image-action { bottom: 25px; right: 18px; gap: 10px; }
+  .folio-image-action > span { font-size: 10px; }
+  .folio-image-action svg { width: 21px; }
+  .folio-details { gap: 16px; padding-top: 22px; min-height: 127px; }
+  .folio-details h3 { font-size: 23px; }
+  .folio-location { font-size: 7px; margin-bottom: 8px; }
+  .folio-development-type { font-size: 8px; line-height: 1.8; max-width: 160px; margin-top: 7px; }
+  .folio-plot-size { padding-left: 12px; }
+  .folio-plot-size > span { font-size: 9px; max-width: 100px; line-height: 1.7; }
+  .folio-plot-size > strong { font-size: 16px; }
+  .folio-plot-size small { font-size: 7px; }
+  .folio-plot-size > button { font-size: 8px; gap: 10px; }
+  .folio-empty { padding: 55px 20px; margin-top: 20px; }
+  .folio-empty h3 { font-size: 36px; }
+  .folio-empty > p { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .folio-image-parallax { transform: none !important; }
+  .folio-image-parallax img { scale: 1 !important; }
+}

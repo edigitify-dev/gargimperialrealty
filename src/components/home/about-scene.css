@@ -1,0 +1,42 @@
+.about-chapter { margin-top: 0; scroll-margin-top: 92px; }
+.about-scroll { position: relative; height: 255svh; }
+.about-sticky { position: sticky; top: 92px; height: calc(100svh - 92px); min-height: 530px; }
+.about-stage { position: relative; height: 100%; isolation: isolate; overflow: clip; background: #dcecf7; }
+.about-environment, .about-architecture { position: absolute; inset: 0; }
+.about-environment { z-index: 0; }
+.about-architecture { z-index: 3; pointer-events: none; mask-image: linear-gradient(to bottom, transparent max(36vw, 54%), #000 max(37.3333vw, 56%)); }
+.about-scene-image { object-fit: cover; object-position: center top; }
+.about-sky-wash { position: absolute; inset: 0 0 40%; z-index: 1; pointer-events: none; background: linear-gradient(#eaf3f9d9, #eaf3f900 75%); }
+.about-title { position: absolute; top: 28%; width: 100%; z-index: 2; text-align: center; pointer-events: none; }
+.about-title h2 { font-size: clamp(62px, 8.3vw, 132px); font-weight: 450; line-height: .99; color: #102f49; }
+.about-title h2 > span, .about-title h2 > em { display: block; }
+.about-title h2 > .kinetic-line-italic { font-size: 1.08em; line-height: 1.05; margin-top: 7px; }
+.about-chapter[data-ready="false"] .about-title { opacity: 0; }
+.about-static .about-title { transform: none !important; opacity: 1 !important; }
+
+@media (max-width: 1100px) {
+  .about-title { top: 32%; }
+}
+@media (max-height: 650px) {
+  .about-sticky { min-height: 0; }
+  .about-scene-image { object-position: center 65%; }
+  .about-architecture { mask-image: none; }
+  .about-title { top: 28%; }
+  .about-title h2 { font-size: clamp(32px, 9svh, 64px); }
+}
+/* Preserve the layered scroll reveal with typography sized for phones. */
+@media (max-width: 760px) {
+  .about-chapter { scroll-margin-top: 78px; }
+  .about-scroll { height: 235svh; }
+  .about-sticky { top: 78px; height: calc(100svh - 78px); min-height: 0; }
+  .about-title { top: 32%; padding-inline: 22px; }
+  .about-title h2 { font-size: clamp(34px, 9.5vw, 64px); line-height: 1.1; font-weight: 450; }
+  .about-title h2 > .kinetic-line-italic { font-size: 1.06em; line-height: 1.15; margin-top: 6px; }
+  .about-scene-image { object-position: center top; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-scroll { height: auto; }
+  .about-sticky { position: relative; top: auto; }
+  .about-stage, .about-title, .about-environment, .about-architecture { transform: none !important; opacity: 1 !important; clip-path: none !important; }
+  .about-chapter .about-title { opacity: 1 !important; }
+}
