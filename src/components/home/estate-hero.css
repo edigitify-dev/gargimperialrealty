@@ -28,41 +28,16 @@
 .estate-hero-benefits svg { width: 28px; height: 28px; flex-shrink: 0; }
 .estate-hero-benefits > li > span { font-size: 9px; font-weight: 500; line-height: 1.85; white-space: nowrap; }
 .estate-hero[data-hero-state="ready"] .estate-hero-benefits > li { animation: estate-detail-enter 1s both; animation-delay: calc(.4s + var(--benefit-index) * .1s); }
-.header .nav-container { width: 80.2%; max-width: 1440px; height: 102px; gap: 28px; }
-.header .brand { gap: 18px; }
-.header .brand svg { width: 41px; height: 51px; }
-.header .brand > span { font-size: 21px; }
-.header .brand-sub { margin-top: 8px; font-size: 9px; }
-.header .desktop-nav { gap: 31px; }
-.header .desktop-nav a { font-size: 13px; font-weight: 600; }
-.header .nav-cta { min-height: 54px; padding: 16px 29px; gap: 28px; font-size: 13px; border-radius: 4px; background: #082e50; }
 @keyframes estate-title-rise { from { opacity: 0; transform: translateY(52%); } to { opacity: 1; transform: translateY(0); } }
 @keyframes estate-detail-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 1300px) {
-  .header .nav-container { width: 90%; gap: 20px; }
-  .header .brand { gap: 12px; }
-  .header .brand > span { font-size: 17px; }
-  .header .brand svg { width: 35px; }
-  .header .desktop-nav { gap: 23px; }
-  .header .desktop-nav a { font-size: 11px; }
-  .header .nav-cta { font-size: 11px; padding-inline: 20px; gap: 18px; }
   .estate-hero-benefits { width: 86%; }
   .estate-hero-benefits > li { padding-inline: 16px; gap: 12px; }
   .estate-hero-benefits > li > span { font-size: 8px; }
   .estate-hero-benefits svg { width: 26px; height: 26px; }
 }
-@media (max-width: 1000px) {
-  .header .nav-container { width: calc(100% - 52px); }
-  .header .desktop-nav { gap: 17px; }
-  .header .nav-cta { display: none; }
-}
 /* Mobile uses a natural reading order; the desktop layered scene stays intact. */
 @media (max-width: 760px) {
-  .header .nav-container { width: calc(100% - 40px); height: 78px; }
-  .header .brand { gap: 10px; }
-  .header .brand svg { width: 31px; height: 42px; }
-  .header .brand > span { font-size: 15px; }
-  .header .brand-sub { font-size: 7px; margin-top: 6px; }
   .estate-hero { display: flex; flex-direction: column; height: auto; min-height: 0; max-height: none; padding: 118px 22px 28px; background: #e8f2f8; }
   .estate-hero-copy { position: relative; inset: auto; order: 0; }
   .estate-hero-heading-frame { padding-top: 0; }

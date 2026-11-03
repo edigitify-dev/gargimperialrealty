@@ -28,6 +28,7 @@ export default function SiteFooter() {
             <button onClick={openVisit}>Plan a site visit <ArrowUpRight size={14} /></button>
             <a href="/#masterplan">Explore the vision</a>
             <a href="/#testimonials">Testimonials</a>
+            <a href="/contact/">Contact us</a>
           </div>
         </div>
         <div className="footer-bottom">

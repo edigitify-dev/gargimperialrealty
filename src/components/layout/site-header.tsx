@@ -14,8 +14,9 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const pathname = usePathname();
-  const isAbout = pathname.replace(/\/$/, "") === "/about";
-  const currentSection = isAbout ? "about" : activeSection;
+  const pagePath = pathname.replace(/\/$/, "");
+  const pageSection = pagePath === "/about" ? "about" : pagePath === "/contact" ? "contact" : /^\/blog(?:\/|$)/.test(pathname) ? "blog" : null;
+  const currentSection = pageSection ?? activeSection;
   const { openVisit } = useSiteVisit();
 
   useEffect(() => {
@@ -41,7 +42,7 @@ export default function SiteHeader() {
       window.removeEventListener("scroll", handleScroll);
       observer.disconnect();
     };
-  }, []);
+  }, [pathname]);
 
   useEffect(() => {
     if (!menuOpen) return;
@@ -63,7 +64,7 @@ export default function SiteHeader() {
               key={link.id}
               className={currentSection === link.id ? "active" : ""}
               href={link.href}
-              aria-current={currentSection === link.id ? (isAbout ? "page" : "location") : undefined}
+              aria-current={currentSection === link.id ? (pageSection ? "page" : "location") : undefined}
             >
               {link.text}
             </a>
@@ -93,7 +94,7 @@ export default function SiteHeader() {
             exit={{ opacity: 0, height: 0 }}
           >
             {navigationLinks.map((link) => (
-              <a key={link.id} href={link.href} aria-current={currentSection === link.id ? (isAbout ? "page" : "location") : undefined} onClick={() => setMenuOpen(false)}>
+              <a key={link.id} href={link.href} aria-current={currentSection === link.id ? (pageSection ? "page" : "location") : undefined} onClick={() => setMenuOpen(false)}>
                 {link.text}<ArrowUpRight size={18} />
               </a>
             ))}
