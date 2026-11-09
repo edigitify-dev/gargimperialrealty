@@ -8,25 +8,25 @@ import "./site-footer.css";
 
 export default function SiteFooter() {
   return (
-    <footer>
+    <footer className="site-footer">
       <Reveal className="container" variant="soft">
         <div className="footer-main motion-sequence">
-          <div>
+          <div className="footer-brand">
             <Brand />
             <p>Thoughtfully chosen land.<br />Extraordinary possibilities.</p>
           </div>
-          <div className="footer-links">
-            <span>EXPLORE</span>
+          <nav className="footer-links" aria-label="Explore">
+            <h2 className="footer-heading">Explore</h2>
             <a href="/about/">Our story</a>
             <a href="/#projects">Our developments</a>
             <a href="/about/#approach">Our approach</a>
-          </div>
-          <div className="footer-links">
-            <span>TAKE THE NEXT STEP</span>
-            <Link href="/contact/">Plan a site visit <ArrowUpRight size={14} /></Link>
+          </nav>
+          <nav className="footer-links" aria-label="Take the next step">
+            <h2 className="footer-heading">Take the next step</h2>
+            <Link href="/contact/" className="footer-visit">Plan a site visit <ArrowUpRight size={18} aria-hidden="true" /></Link>
             <a href="/#masterplan">Explore the vision</a>
             <a href="/#testimonials">Testimonials</a>
-          </div>
+          </nav>
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Garg Imperial Realty. All rights reserved.</span>
