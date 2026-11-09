@@ -1,7 +1,7 @@
 "use client";
 
 import useReducedMotion from "@/hooks/use-reduced-motion";
-import { useSiteVisit } from "@/components/site-visit/site-visit-provider";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "motion/react";
@@ -15,7 +15,6 @@ function useRisingReveal(progress: MotionValue<number>, reduced: boolean | null,
 }
 
 export default function HorizonCTA() {
-  const { openVisit } = useSiteVisit();
   const section = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: section, offset: ["start end", "end start"] });
@@ -52,7 +51,7 @@ export default function HorizonCTA() {
             <Image src="/images/high-rise-cutout.png" alt="Architectural concept of two illuminated residential towers" fill sizes="(max-width: 600px) 160px, (max-width: 960px) 280px, 330px" />
           </motion.div>
           <motion.div className="horizon-actions" style={actions}>
-            <button className="horizon-book" onClick={openVisit}>Book a Site Visit <ArrowUpRight size={19} strokeWidth={1.4} aria-hidden="true" /></button>
+            <Link className="horizon-book" href="/contact/">Book a Site Visit <ArrowUpRight size={19} strokeWidth={1.4} aria-hidden="true" /></Link>
           </motion.div>
         </motion.div>
       </div>

@@ -1,26 +1,26 @@
-.horizon-cta { padding: 105px 0 48px; background: #f7f6f2; scroll-margin-top: 95px; }
-.horizon-panel { position: relative; isolation: isolate; display: flex; justify-content: space-between; align-items: center; gap: 30px; min-height: 250px; padding: 39px 44px; background: #123249; color: #fff; border: 1px solid #234358; border-radius: 4px; }
-.horizon-panel::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: radial-gradient(ellipse at 63% 100%, #42606c70, transparent 57%), linear-gradient(115deg, #ffffff03, transparent 50%); pointer-events: none; }
-.horizon-panel-detail { position: absolute; inset: 12px; z-index: -1; border: 1px solid #d4bd8f25; border-radius: 1px; pointer-events: none; }
-.horizon-panel-detail::before, .horizon-panel-detail::after { content: ''; position: absolute; width: 38px; height: 1px; background: #d4bd8f; opacity: .6; }
+.horizon-cta { padding: 105px 0 48px; background: var(--surface); scroll-margin-top: 95px; }
+.horizon-panel { --focus-ring: var(--brand-accent); position: relative; isolation: isolate; display: flex; justify-content: space-between; align-items: center; gap: 30px; min-height: 250px; padding: 39px 44px; background: var(--brand-dark); color: var(--text-on-dark); border: 1px solid var(--brand-dark); border-radius: 4px; }
+.horizon-panel::before { content: ''; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: radial-gradient(ellipse at 63% 100%, color-mix(in srgb, var(--text-muted) 43.9%, transparent), transparent 57%), linear-gradient(115deg, color-mix(in srgb, var(--surface) 1.2%, transparent), transparent 50%); pointer-events: none; }
+.horizon-panel-detail { position: absolute; inset: 12px; z-index: -1; border: 1px solid color-mix(in srgb, var(--brand-accent) 14.5%, transparent); border-radius: 1px; pointer-events: none; }
+.horizon-panel-detail::before, .horizon-panel-detail::after { content: ''; position: absolute; width: 38px; height: 1px; background: var(--brand-accent); opacity: .6; }
 .horizon-panel-detail::before { top: -1px; left: -1px; }
 .horizon-panel-detail::after { bottom: -1px; right: -1px; }
 .horizon-light-sweep { position: absolute; inset: 1px; z-index: 0; overflow: hidden; border-radius: inherit; pointer-events: none; }
-.horizon-light-sweep > span { display: block; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, #e9d7ac0c 48%, #e9d7ac16 50%, transparent 63%); }
+.horizon-light-sweep > span { display: block; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 35%, color-mix(in srgb, var(--brand-accent) 4.7%, transparent) 48%, color-mix(in srgb, var(--brand-accent) 8.6%, transparent) 50%, transparent 63%); }
 .horizon-invitation { position: relative; z-index: 2; width: 43%; }
 .horizon-invitation h2 { font-size: clamp(32px, 3.1vw, 44px); font-weight: 450; line-height: 1.1; }
 .horizon-title-line { display: block; overflow: clip; padding-bottom: .08em; margin-bottom: -.08em; }
 .horizon-title-line > span { display: block; }
-.horizon-title-accent { color: #e4d1aa; }
-.horizon-description { max-width: 320px; font-size: 11px; line-height: 1.8; color: #becdd6; margin-top: 17px; }
+.horizon-title-accent { color: var(--brand-accent); }
+.horizon-description { max-width: 320px; font-size: 11px; line-height: 1.8; color: var(--text-on-dark-muted); margin-top: 17px; }
 .horizon-architecture { position: absolute; right: 240px; bottom: 0; width: 330px; height: 355px; z-index: 1; pointer-events: none; }
-.horizon-architecture img { object-fit: contain; object-position: center bottom; transform: scale(1.08); transform-origin: center bottom; filter: drop-shadow(0 12px 12px #06172338); }
+.horizon-architecture img { object-fit: contain; object-position: center bottom; transform: scale(1.08); transform-origin: center bottom; filter: drop-shadow(0 12px 12px color-mix(in srgb, var(--brand-dark) 22.0%, transparent)); }
 .horizon-actions { position: relative; z-index: 2; display: flex; align-items: center; flex-direction: column; gap: 13px; }
-.horizon-book { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 49px; border: 1px solid #dfcba5; background: #dfcba5; color: #153146; padding: 14px 18px; font-size: 11px; font-weight: 650; transition: background .25s, border-color .25s; }
-.horizon-book:hover { background: #f2e2c4; border-color: #f2e2c4; }
+.horizon-book { display: flex; align-items: center; justify-content: space-between; gap: 25px; min-height: 49px; border: 1px solid var(--brand-accent); background: var(--brand-accent); color: var(--brand-dark); padding: 14px 18px; font-size: 11px; font-weight: 650; transition: background .25s, border-color .25s; }
+.horizon-book:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 .horizon-book svg { transition: transform .25s; }
 .horizon-book:hover svg { transform: translate(2px, -2px); }
-.horizon-book:focus-visible { outline-color: #eed7af; outline-offset: 5px; }
+.horizon-book:focus-visible { outline-color: var(--brand-accent); outline-offset: 5px; }
 .horizon-actions:focus-within { opacity: 1 !important; transform: none !important; }
 @media (max-width: 1100px) {
   .horizon-panel { padding: 35px; }

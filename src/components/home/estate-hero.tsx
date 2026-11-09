@@ -1,7 +1,7 @@
 "use client";
 
 import useReducedMotion from "@/hooks/use-reduced-motion";
-import { useSiteVisit } from "@/components/site-visit/site-visit-provider";
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, ArrowUpRight, Gem, Leaf, MapPinned, TreeDeciduous } from "lucide-react";
 import { motion, useScroll, useTransform } from "motion/react";
@@ -16,7 +16,6 @@ const benefits = [
 ];
 
 export default function EstateHero() {
-  const { openVisit } = useSiteVisit();
   const section = useRef<HTMLElement>(null);
   const reduced = useReducedMotion();
   const [backgroundReady, setBackgroundReady] = useState(false);
@@ -55,7 +54,7 @@ export default function EstateHero() {
       <div className="estate-hero-ground-shade" aria-hidden="true" />
       <motion.div className="estate-hero-actions" style={reduced ? undefined : { y: detailsY, opacity: detailsOpacity }}>
         <a href="#projects" className="estate-hero-explore">Explore Our Plots <ArrowRight size={16} strokeWidth={1.5} aria-hidden="true" /></a>
-        <button onClick={openVisit}>Schedule a Site Visit <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" /></button>
+        <Link href="/contact/" className="estate-hero-visit">Schedule a Site Visit <ArrowUpRight size={16} strokeWidth={1.5} aria-hidden="true" /></Link>
       </motion.div>
 
       <motion.ul className="estate-hero-benefits" aria-label="The Imperial approach" style={reduced ? undefined : { opacity: detailsOpacity }}>

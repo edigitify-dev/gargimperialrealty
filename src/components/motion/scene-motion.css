@@ -7,10 +7,10 @@
 .image-reveal { position: relative; isolation: isolate; overflow: clip; perspective: 1100px; }
 .image-reveal-content { position: relative; width: 100%; height: 100%; transform-origin: center 65%; }
 .image-shutters { position: absolute; inset: 0; overflow: hidden; z-index: 4; pointer-events: none; }
-.image-shutter { position: absolute; top: 0; bottom: 0; width: calc(33.333% + 1px); background: #fff; border-right: 1px solid #dce5eb; }
-.image-shutter-exit { background: #eaf1f6; }
-.image-blueprint-scan { position: absolute; inset: 0; z-index: 4; pointer-events: none; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), #9eae9940 calc(25% - 1px), #9eae9940 25%); }
-.image-blueprint-scan > span { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: #8d9f88b3; box-shadow: 0 0 25px 12px #cedcc145; }
+.image-shutter { position: absolute; top: 0; bottom: 0; width: calc(33.333% + 1px); background: var(--surface); border-right: 1px solid var(--border); }
+.image-shutter-exit { background: var(--surface-secondary); }
+.image-blueprint-scan { position: absolute; inset: 0; z-index: 4; pointer-events: none; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(25% - 1px), color-mix(in srgb, var(--brand-primary) 25.1%, transparent) calc(25% - 1px), color-mix(in srgb, var(--brand-primary) 25.1%, transparent) 25%); }
+.image-blueprint-scan > span { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: color-mix(in srgb, var(--brand-primary) 70.2%, transparent); box-shadow: 0 0 25px 12px color-mix(in srgb, var(--text-on-dark-muted) 27.1%, transparent); }
 .image-reveal-aperture figcaption { opacity: calc(clamp(0, (var(--scene-enter, 1) - .32) * 1.7, 1) * (1 - var(--scene-exit, 0))); transform: translateY(calc((1 - clamp(0, (var(--scene-enter, 1) - .32) * 1.7, 1)) * 28px - var(--scene-exit, 0) * 18px)); }
 .image-reveal-aperture::after { transform: scaleX(clamp(0, var(--scene-enter, 1) * 1.25, 1)); transform-origin: left; }
 .motion-sequence > * { --item-index: 0; --item-in: clamp(0, (var(--scene-enter, 1) - var(--item-index) * .075) * 1.6, 1); opacity: calc(var(--item-in) * (1 - var(--scene-exit, 0))); transform: perspective(900px) translate3d(0, calc((1 - var(--item-in)) * 34px - var(--scene-exit, 0) * 26px), 0) rotateX(calc((1 - var(--item-in)) * -7deg)); transform-origin: center bottom; }

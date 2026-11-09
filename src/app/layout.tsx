@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   },
   robots: { index: false, follow: false },
 };
-export const viewport: Viewport = { themeColor: "#183A58" };
+export const viewport: Viewport = { themeColor: "#004737" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return <html lang="en" className={`${bodoniModa.variable} ${manrope.variable}`}><body>{children}</body></html>;
 }

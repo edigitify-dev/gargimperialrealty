@@ -1,14 +1,12 @@
 "use client";
 
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 import Reveal from "@/components/motion/scroll-reveal";
-import { useSiteVisit } from "@/components/site-visit/site-visit-provider";
 import Brand from "./brand";
 import "./site-footer.css";
 
 export default function SiteFooter() {
-  const { openVisit } = useSiteVisit();
-
   return (
     <footer>
       <Reveal className="container" variant="soft">
@@ -25,10 +23,9 @@ export default function SiteFooter() {
           </div>
           <div className="footer-links">
             <span>TAKE THE NEXT STEP</span>
-            <button onClick={openVisit}>Plan a site visit <ArrowUpRight size={14} /></button>
+            <Link href="/contact/">Plan a site visit <ArrowUpRight size={14} /></Link>
             <a href="/#masterplan">Explore the vision</a>
             <a href="/#testimonials">Testimonials</a>
-            <a href="/contact/">Contact us</a>
           </div>
         </div>
         <div className="footer-bottom">

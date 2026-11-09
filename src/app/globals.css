@@ -1,9 +1,45 @@
 @import "tailwindcss";
-@theme inline { --color-imperial: #183a58; --color-ice: #eaf1f6; --font-sans: var(--font-manrope); --font-serif: var(--font-bodoni-moda); }
-:root { --navy: #183a58; --dark: #102b42; --ice: #eaf1f6; --steel: #a9bccb; --line: #dce5eb; --muted: #697780; --sans: var(--font-manrope); --serif: var(--font-bodoni-moda); }
+@theme inline {
+  --color-forest-green: var(--forest-green);
+  --color-deep-emerald: var(--deep-emerald);
+  --color-amber-clay: var(--amber-clay);
+  --color-soft-stone: var(--soft-stone);
+  --color-warm-ivory: var(--warm-ivory);
+  --color-imperial: var(--brand-primary);
+  --color-ice: var(--surface-secondary);
+  --font-sans: var(--font-manrope);
+  --font-serif: var(--font-bodoni-moda);
+}
+
+:root {
+  /* Brand palette: ivory 40%, stone 25%, forest 20%, emerald 10%, amber 5%.
+     Warm Ivory follows the usage table in the brand guide (#F6EFE6). */
+  --forest-green: #004737;
+  --deep-emerald: #00251f;
+  --amber-clay: #df9b4d;
+  --soft-stone: #e9d3c0;
+  --warm-ivory: #f6efe6;
+
+  --brand-primary: var(--forest-green);
+  --brand-dark: var(--deep-emerald);
+  --brand-accent: var(--amber-clay);
+  --surface: var(--warm-ivory);
+  --surface-secondary: var(--soft-stone);
+  --text-muted: color-mix(in srgb, var(--forest-green) 80%, var(--soft-stone));
+  --text-on-dark: var(--warm-ivory);
+  --text-on-dark-muted: var(--soft-stone);
+  --accent-ink: color-mix(in srgb, var(--deep-emerald) 60%, var(--amber-clay));
+  --accent-hover: color-mix(in srgb, var(--amber-clay) 80%, var(--warm-ivory));
+  --border: color-mix(in srgb, var(--forest-green) 20%, var(--soft-stone));
+  --border-strong: color-mix(in srgb, var(--forest-green) 55%, var(--soft-stone));
+  --border-on-dark: color-mix(in srgb, var(--soft-stone) 25%, transparent);
+  --focus-ring: var(--forest-green);
+  --sans: var(--font-manrope);
+  --serif: var(--font-bodoni-moda);
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 105px; }
-body { margin: 0; color: var(--navy); background: #fff; font-family: var(--sans); font-size: 14px; -webkit-font-smoothing: antialiased; }
+body { margin: 0; color: var(--brand-primary); background: var(--surface); font-family: var(--sans); font-size: 14px; -webkit-font-smoothing: antialiased; }
 button, input, select, textarea { font: inherit; }
 button, a, select { -webkit-tap-highlight-color: transparent; }
 button { cursor: pointer; }
@@ -11,8 +47,8 @@ a { text-decoration: none; color: inherit; }
 button { color: inherit; }
 button:disabled { cursor: default; }
 button, input, select, textarea { border-radius: 0; }
-button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid #5d89aa; outline-offset: 5px; }
-::selection { background: #c7d9e6; color: var(--dark); }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 5px; }
+::selection { background: var(--surface-secondary); color: var(--brand-dark); }
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 500; font-optical-sizing: auto; }
 img { object-fit: cover; }
@@ -22,24 +58,24 @@ em { font-family: var(--serif); font-weight: 400; }
 .eyebrow { font-size: 9px; font-weight: 700; line-height: 1.7; }
 h2 { font-weight: 500; font-size: clamp(35px, 4.2vw, 59px); line-height: 1.16; }
 h2 em { font-size: 1.08em; }
-.muted { color: var(--muted); font-size: 13px; line-height: 1.95; }
+.muted { color: var(--text-muted); font-size: 13px; line-height: 1.95; }
 .button { display: inline-flex; justify-content: space-between; align-items: center; gap: 28px; min-height: 49px; padding: 15px 23px; border: 1px solid transparent; border-radius: 3px; font-size: 11px; font-weight: 600; transition: background .25s, color .25s, transform .25s, box-shadow .25s; }
 .button svg, .text-link svg { flex-shrink: 0; transition: transform .25s; }
 .button:hover svg, .text-link:hover svg { transform: translate(3px, -3px); }
-.primary { background: var(--navy); color: white; }
-.primary:hover { background: var(--dark); box-shadow: 0 6px 22px #102b4215; }
-.white { color: var(--navy); background: white; }
-.white:hover { background: var(--ice); }
-.text-link { font-size: 11px; font-weight: 650; display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; padding: 12px 0; border: 0; border-bottom: 1px solid #a9bccb; background: transparent; }
-.skip-link { position: fixed; top: -60px; left: 20px; padding: 15px; z-index: 100; background: white; }
+.primary { background: var(--brand-accent); color: var(--brand-dark); }
+.primary:hover { background: var(--accent-hover); box-shadow: 0 6px 22px color-mix(in srgb, var(--brand-dark) 8.2%, transparent); }
+.white { color: var(--brand-primary); background: var(--surface); }
+.white:hover { background: var(--surface-secondary); }
+.text-link { font-size: 11px; font-weight: 650; display: inline-flex; align-items: center; justify-content: space-between; gap: 28px; padding: 12px 0; border: 0; border-bottom: 1px solid var(--border); background: transparent; }
+.skip-link { position: fixed; top: -60px; left: 20px; padding: 15px; z-index: 100; background: var(--surface); }
 .skip-link:focus { top: 15px; }
 .section-heading { display: flex; justify-content: space-between; align-items: flex-end; gap: 50px; margin-bottom: 42px; }
 .section-heading .eyebrow { margin-bottom: 20px; }
-.heading-aside { font-size: 11px; line-height: 1.9; color: var(--muted); max-width: 300px; padding-bottom: 4px; }
-.heading-aside .text-link { color: var(--navy); margin-top: 15px; }
+.heading-aside { font-size: 11px; line-height: 1.9; color: var(--text-muted); max-width: 300px; padding-bottom: 4px; }
+.heading-aside .text-link { color: var(--brand-primary); margin-top: 15px; }
 .scroll-reveal { position: relative; }
 .scroll-reveal:focus-within { opacity: 1 !important; transform: none !important; clip-path: none !important; }
-.form-note { font-size: 9px; color: var(--muted); line-height: 1.8; }
+.form-note { font-size: 9px; color: var(--text-muted); line-height: 1.8; }
 
 @media (max-width: 1200px) {
   .container { width: calc(100% - 88px); }

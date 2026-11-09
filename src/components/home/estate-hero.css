@@ -1,6 +1,7 @@
-.estate-hero { position: relative; isolation: isolate; width: 100%; height: 100svh; min-height: 720px; max-height: 1120px; overflow: clip; background: #dceefb; color: #082e50; }
+.estate-hero { position: relative; isolation: isolate; width: 100%; height: 100svh; min-height: 720px; max-height: 1120px; overflow: clip; background: var(--surface); color: var(--brand-primary); }
 .estate-hero-scene, .estate-hero-foreground { position: absolute; inset: 0; transform-origin: center; }
 .estate-hero-scene { z-index: 0; }
+.estate-hero-scene::after { content: ''; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(color-mix(in srgb, var(--surface) 65%, transparent), transparent 65%); }
 .estate-hero-photo { object-fit: cover; object-position: center center; }
 .estate-hero-foreground { z-index: 3; pointer-events: none; mask-image: url('/images/hero-estate-foreground.png'); mask-size: cover; mask-position: center center; mask-repeat: no-repeat; }
 .estate-hero-copy { position: absolute; inset: calc(18.5% + 24px) 0 auto; z-index: 2; text-align: center; }
@@ -11,19 +12,19 @@
 .estate-hero-legacy { font-size: clamp(78px, 10.8vw, 205px); margin-top: 7px; }
 .estate-hero[data-hero-state="loading"] h1 { opacity: 0; transform: translateY(52%); }
 .estate-hero[data-hero-state="ready"] h1 { animation: estate-title-rise 1.8s cubic-bezier(.22, 1, .36, 1) both; }
-.estate-hero-ground-shade { position: absolute; z-index: 4; inset: 68% 0 0; pointer-events: none; background: linear-gradient(180deg, transparent, #0b2a4538 45%, #0b2a459e); }
+.estate-hero-ground-shade { position: absolute; z-index: 4; inset: 68% 0 0; pointer-events: none; background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--brand-dark) 22.0%, transparent) 45%, color-mix(in srgb, var(--brand-dark) 62.0%, transparent)); }
 .estate-hero-actions { position: absolute; z-index: 5; bottom: 15.8%; left: 0; right: 0; display: flex; justify-content: center; align-items: center; gap: 16px; }
-.estate-hero-actions > a, .estate-hero-actions > button { display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 48px; padding: 13px 24px; border: 1px solid #123b61; border-radius: 5px; background: #fffffff5; color: #092e50; font-size: 12px; font-weight: 600; box-shadow: 0 3px 12px #14345216; transition: background .25s, box-shadow .25s; }
-.estate-hero-actions > .estate-hero-explore { background: #082e50f5; color: #fff; min-width: 194px; }
-.estate-hero-actions > button { min-width: 214px; }
-.estate-hero-actions > a:hover { background: #16496d; }
-.estate-hero-actions > button:hover { background: #fff; box-shadow: 0 5px 20px #0c2b4825; }
+.estate-hero-actions > a { display: flex; align-items: center; justify-content: space-between; gap: 22px; min-height: 48px; padding: 13px 24px; border: 1px solid var(--brand-primary); border-radius: 5px; background: var(--brand-accent); color: var(--brand-dark); font-size: 12px; font-weight: 600; box-shadow: 0 3px 12px color-mix(in srgb, var(--brand-dark) 8.6%, transparent); transition: background .25s, box-shadow .25s; }
+.estate-hero-actions > .estate-hero-explore { background: color-mix(in srgb, var(--brand-primary) 96.1%, transparent); color: var(--surface); min-width: 194px; }
+.estate-hero-actions > .estate-hero-visit { min-width: 214px; }
+.estate-hero-actions > .estate-hero-explore:hover { background: var(--brand-dark); }
+.estate-hero-actions > .estate-hero-visit:hover { background: var(--accent-hover); box-shadow: 0 5px 20px color-mix(in srgb, var(--brand-dark) 14.5%, transparent); }
 .estate-hero-actions svg { flex-shrink: 0; transition: transform .25s; }
-.estate-hero-actions > a:hover svg { transform: translateX(3px); }
-.estate-hero-actions > button:hover svg { transform: translate(2px, -2px); }
+.estate-hero-actions > .estate-hero-explore:hover svg { transform: translateX(3px); }
+.estate-hero-actions > .estate-hero-visit:hover svg { transform: translate(2px, -2px); }
 .estate-hero-actions:focus-within { opacity: 1 !important; }
-.estate-hero-benefits { position: absolute; z-index: 5; bottom: 4.5%; left: 50%; width: min(1040px, 82%); transform: translateX(-50%); display: grid; grid-template-columns: repeat(4, 1fr); padding: 20px 0 0; border-top: 1px solid #ffffff30; margin: 0; list-style: none; color: #fff; }
-.estate-hero-benefits > li { display: flex; align-items: center; justify-content: center; gap: 14px; min-width: 0; min-height: 36px; padding-inline: 20px; border-left: 1px solid #ffffff40; }
+.estate-hero-benefits { position: absolute; z-index: 5; bottom: 4.5%; left: 50%; width: min(1040px, 82%); transform: translateX(-50%); display: grid; grid-template-columns: repeat(4, 1fr); padding: 20px 0 0; border-top: 1px solid color-mix(in srgb, var(--surface) 18.8%, transparent); margin: 0; list-style: none; color: var(--surface); }
+.estate-hero-benefits > li { display: flex; align-items: center; justify-content: center; gap: 14px; min-width: 0; min-height: 36px; padding-inline: 20px; border-left: 1px solid color-mix(in srgb, var(--surface) 25.1%, transparent); }
 .estate-hero-benefits > li:first-child { border-left: 0; }
 .estate-hero-benefits svg { width: 28px; height: 28px; flex-shrink: 0; }
 .estate-hero-benefits > li > span { font-size: 9px; font-weight: 500; line-height: 1.85; white-space: nowrap; }
@@ -38,22 +39,22 @@
 }
 /* Mobile uses a natural reading order; the desktop layered scene stays intact. */
 @media (max-width: 760px) {
-  .estate-hero { display: flex; flex-direction: column; height: auto; min-height: 0; max-height: none; padding: 118px 22px 28px; background: #e8f2f8; }
+  .estate-hero { display: flex; flex-direction: column; height: auto; min-height: 0; max-height: none; padding: 118px 22px 28px; background: var(--surface); }
   .estate-hero-copy { position: relative; inset: auto; order: 0; }
   .estate-hero-heading-frame { padding-top: 0; }
   .estate-hero-own { font-size: clamp(44px, 13.5vw, 82px); }
   .estate-hero-legacy { font-size: clamp(64px, 19.5vw, 118px); margin-top: 10px; }
   .estate-hero-scene { position: relative; inset: auto; order: 1; flex-shrink: 0; height: clamp(300px, 86vw, 470px); margin: -96px -22px 0; }
   .estate-hero-photo { object-position: 61% center; }
-  .estate-hero-scene::after { content: ''; position: absolute; inset: 0; background: linear-gradient(#e8f2f8, transparent 24%, transparent 85%, #e8f2f8); }
+  .estate-hero-scene::after { content: ''; position: absolute; inset: 0; background: linear-gradient(var(--surface), transparent 24%, transparent 85%, var(--surface)); }
   .estate-hero-foreground, .estate-hero-ground-shade { display: none; }
   .estate-hero-actions { position: relative; inset: auto; order: 2; flex-direction: column; gap: 10px; padding: 0; margin-top: -4px; }
-  .estate-hero-actions > a, .estate-hero-actions > button { width: 100%; min-width: 0; min-height: 50px; padding: 15px 20px; font-size: 12px; gap: 18px; border-radius: 3px; box-shadow: none; }
-  .estate-hero-actions > .estate-hero-explore { min-width: 0; background: #082e50; }
-  .estate-hero-actions > button { background: #ffffff70; border-color: #123b612e; }
+  .estate-hero-actions > a { width: 100%; min-width: 0; min-height: 50px; padding: 15px 20px; font-size: 12px; gap: 18px; border-radius: 3px; box-shadow: none; }
+  .estate-hero-actions > .estate-hero-explore { min-width: 0; background: var(--brand-primary); }
+  .estate-hero-actions > .estate-hero-visit { background: var(--brand-accent); border-color: var(--brand-accent); }
   .estate-hero-actions svg { width: 17px; height: 17px; }
-  .estate-hero-benefits { position: relative; inset: auto; order: 3; width: 100%; transform: none; grid-template-columns: 1fr 1fr; gap: 20px 14px; padding: 22px 0 0; margin: 24px 0 0; border-top-color: #123b6126; color: #153b56; }
-  .estate-hero-benefits > li { justify-content: flex-start; min-height: 34px; padding: 0 0 0 14px; gap: 10px; border-left-color: #123b6126; }
+  .estate-hero-benefits { position: relative; inset: auto; order: 3; width: 100%; transform: none; grid-template-columns: 1fr 1fr; gap: 20px 14px; padding: 22px 0 0; margin: 24px 0 0; border-top-color: color-mix(in srgb, var(--brand-primary) 14.9%, transparent); color: var(--brand-primary); }
+  .estate-hero-benefits > li { justify-content: flex-start; min-height: 34px; padding: 0 0 0 14px; gap: 10px; border-left-color: color-mix(in srgb, var(--brand-primary) 14.9%, transparent); }
   .estate-hero-benefits > li:nth-child(odd) { padding-left: 0; border-left: 0; }
   .estate-hero-benefits svg { width: 23px; height: 23px; }
   .estate-hero-benefits > li > span { font-size: 8px; line-height: 1.75; white-space: normal; }

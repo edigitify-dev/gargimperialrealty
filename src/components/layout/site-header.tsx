@@ -3,9 +3,9 @@
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { navigationLinks } from "@/data/navigation";
-import { useSiteVisit } from "@/components/site-visit/site-visit-provider";
 import Brand from "./brand";
 import "./site-header.css";
 
@@ -17,7 +17,6 @@ export default function SiteHeader() {
   const pagePath = pathname.replace(/\/$/, "");
   const pageSection = pagePath === "/about" ? "about" : pagePath === "/contact" ? "contact" : /^\/blog(?:\/|$)/.test(pathname) ? "blog" : null;
   const currentSection = pageSection ?? activeSection;
-  const { openVisit } = useSiteVisit();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 35);
@@ -70,9 +69,9 @@ export default function SiteHeader() {
             </a>
           ))}
         </nav>
-        <button onClick={openVisit} className="button primary nav-cta">
+        <Link href="/contact/" className="button primary nav-cta" aria-current={pageSection === "contact" ? "page" : undefined}>
           Book a Site Visit <ArrowUpRight size={16} />
-        </button>
+        </Link>
         <button
           className="menu-toggle"
           aria-expanded={menuOpen}
@@ -98,15 +97,14 @@ export default function SiteHeader() {
                 {link.text}<ArrowUpRight size={18} />
               </a>
             ))}
-            <button
+            <Link
+              href="/contact/"
               className="button primary"
-              onClick={() => {
-                setMenuOpen(false);
-                openVisit();
-              }}
+              aria-current={pageSection === "contact" ? "page" : undefined}
+              onClick={() => setMenuOpen(false)}
             >
               Book a Site Visit <ArrowUpRight size={18} />
-            </button>
+            </Link>
           </motion.nav>
         )}
       </AnimatePresence>

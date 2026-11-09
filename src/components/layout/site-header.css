@@ -1,5 +1,5 @@
-.header { position: absolute; top: 0; left: 0; width: 100%; z-index: 50; border-bottom: 1px solid #183a5815; transition: background .3s, box-shadow .3s; }
-.header.is-scrolled { position: fixed; background: #fffffff5; backdrop-filter: blur(20px); box-shadow: 0 3px 25px #102b4206; }
+.header { position: absolute; top: 0; left: 0; width: 100%; z-index: 50; border-bottom: 1px solid color-mix(in srgb, var(--brand-primary) 8.2%, transparent); transition: background .3s, box-shadow .3s; }
+.header.is-scrolled { position: fixed; background: color-mix(in srgb, var(--surface) 96.1%, transparent); backdrop-filter: blur(20px); box-shadow: 0 3px 25px color-mix(in srgb, var(--brand-dark) 2.4%, transparent); }
 .nav-container { width: 80.2%; max-width: 1440px; margin: auto; height: 102px; display: flex; align-items: center; justify-content: space-between; gap: 28px; }
 .header .brand { gap: 18px; }
 .header .brand svg { width: 41px; height: 51px; }
@@ -7,9 +7,9 @@
 .header .brand-sub { margin-top: 8px; font-size: 9px; }
 .desktop-nav { display: flex; align-items: center; gap: 31px; }
 .desktop-nav a { position: relative; padding: 15px 0; font-size: 13px; font-weight: 600; white-space: nowrap; }
-.desktop-nav a::after { content: ''; position: absolute; height: 2px; bottom: 6px; left: 0; background: var(--navy); width: 100%; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
+.desktop-nav a::after { content: ''; position: absolute; height: 2px; bottom: 6px; left: 0; background: var(--brand-accent); width: 100%; transform: scaleX(0); transform-origin: left; transition: transform .25s; }
 .desktop-nav a:hover::after, .desktop-nav a.active::after { transform: scaleX(1); }
-.header .nav-cta { min-height: 54px; padding: 16px 29px; font-size: 13px; gap: 28px; border-radius: 4px; background: #082e50; flex-shrink: 0; white-space: nowrap; }
+.header .nav-cta { min-height: 54px; padding: 16px 29px; font-size: 13px; gap: 28px; border-radius: 4px; flex-shrink: 0; white-space: nowrap; }
 .menu-toggle { display: none; padding: 8px; border: 0; background: transparent; }
 .mobile-nav { display: none; }
 
@@ -37,7 +37,7 @@
   .header .brand-sub { font-size: 7px; margin-top: 6px; }
   .desktop-nav { display: none; }
   .menu-toggle { display: block; }
-  .mobile-nav { display: flex; flex-direction: column; background: white; overflow: hidden; padding-inline: 25px; }
-  .mobile-nav > a { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
+  .mobile-nav { display: flex; flex-direction: column; background: var(--surface); overflow: hidden; padding-inline: 25px; }
+  .mobile-nav > a:not(.button) { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   .mobile-nav > .button { margin: 20px 0 25px; }
 }
