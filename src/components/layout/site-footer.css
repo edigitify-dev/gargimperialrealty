@@ -15,11 +15,11 @@
 .footer-brand .brand { gap: 15px; color: var(--brand-dark); }
 .footer-brand .brand svg { width: 42px; height: 54px; }
 .footer-brand .brand > span { font-size: 24px; }
-.footer-brand .brand-sub { font-size: 10px; letter-spacing: .12em; margin-top: 8px; }
+.footer-brand .brand-sub { font-size: 10px; margin-top: 8px; }
 .footer-brand > p { max-width: 290px; margin-top: 24px; color: var(--brand-primary); font-size: 14px; line-height: 1.85; }
 
 .footer-links { display: flex; flex-direction: column; align-items: flex-start; min-width: 0; gap: 4px; padding-top: 5px; }
-.site-footer .footer-heading { margin: 0 0 14px; color: var(--brand-primary); font-family: var(--sans); font-size: 11px; font-weight: 700; line-height: 1.7; letter-spacing: .12em; text-transform: uppercase; }
+.site-footer .footer-heading { margin: 0 0 14px; color: var(--brand-primary); font-family: var(--sans); font-size: 11px; font-weight: 700; line-height: 1.7; text-transform: uppercase; }
 .footer-links a {
   display: inline-flex;
   align-items: center;
@@ -58,7 +58,7 @@
   .footer-brand .brand svg { width: 38px; height: 50px; }
   .footer-brand > p { margin-top: 18px; }
   .footer-links { padding-top: 0; }
-  .site-footer .footer-heading { margin-bottom: 10px; font-size: 10px; letter-spacing: .08em; }
+  .site-footer .footer-heading { margin-bottom: 10px; font-size: 10px; }
   .footer-bottom { padding-top: 20px; }
 }
 

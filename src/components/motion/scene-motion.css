@@ -2,7 +2,7 @@
 .kinetic-line { display: block; }
 .kinetic-word-mask { display: inline-block; overflow: clip; vertical-align: top; padding: .15em .08em .19em; margin: -.15em -.08em -.19em; }
 .kinetic-word { display: inline-block; transform-origin: left bottom; }
-.kinetic-line-italic { font-family: var(--serif); font-style: italic; font-size: 1.08em; font-weight: 400; }
+.kinetic-line-emphasis { font-family: var(--serif); font-size: 1.08em; font-weight: 400; }
 .motion-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 .image-reveal { position: relative; isolation: isolate; overflow: clip; perspective: 1100px; }
 .image-reveal-content { position: relative; width: 100%; height: 100%; transform-origin: center 65%; }

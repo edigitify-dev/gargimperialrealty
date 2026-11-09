@@ -29,7 +29,7 @@ Add or reorder homepage sections in `src/app/page.tsx`. Keep section state insid
 
 - Brand colors are defined once in `src/app/globals.css`: Warm Ivory `#F6EFE6`, Soft Stone `#E9D3C0`, Forest Green `#004737`, Deep Emerald `#00251F`, and Amber Clay `#DF9B4D`. Use the semantic CSS variables for component colors or the matching Tailwind utilities (for example, `bg-warm-ivory`, `text-forest-green`, and `bg-amber-clay`). Ivory leads the backgrounds, stone supports surfaces, greens anchor typography and dark sections, and amber highlights calls to action. Muted text, borders, and translucent overlays derive from this palette. Browser theme metadata and the SVG favicon use Forest Green and should stay in sync with palette changes.
 
-- Global typography is configured in `src/app/fonts.ts` using `next/font/local`: Bodoni Moda for headings and italic accents, and Manrope for body text and controls. Font files and their licenses are in `public/fonts/`; no external font stylesheet is needed.
+- Global typography is configured in `src/app/fonts.ts` using `next/font/google`: Montserrat for headings and Open Sans for body text and controls.
 
 - Replace illustrative listings in `src/data/projects.ts` with approved inventory. Budget bands are demonstration categories, not prices. No pricing or legal approvals are claimed.
 - Site-visit forms validate inputs and prepare a downloadable enquiry. They do not transmit data or confirm a booking. Connect an approved CRM or form endpoint before enabling real enquiry submission.

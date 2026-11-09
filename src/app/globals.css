@@ -7,8 +7,8 @@
   --color-warm-ivory: var(--warm-ivory);
   --color-imperial: var(--brand-primary);
   --color-ice: var(--surface-secondary);
-  --font-sans: var(--font-manrope);
-  --font-serif: var(--font-bodoni-moda);
+  --font-sans: var(--font-open-sans);
+  --font-serif: var(--font-montserrat);
 }
 
 :root {
@@ -34,8 +34,8 @@
   --border-strong: color-mix(in srgb, var(--forest-green) 55%, var(--soft-stone));
   --border-on-dark: color-mix(in srgb, var(--soft-stone) 25%, transparent);
   --focus-ring: var(--forest-green);
-  --sans: var(--font-manrope);
-  --serif: var(--font-bodoni-moda);
+  --sans: var(--font-open-sans);
+  --serif: var(--font-montserrat);
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 105px; }
@@ -52,7 +52,7 @@ button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible
 h1, h2, h3, p { margin: 0; }
 h1, h2, h3, h4, h5, h6 { font-family: var(--serif); font-weight: 500; font-optical-sizing: auto; }
 img { object-fit: cover; }
-em { font-family: var(--serif); font-weight: 400; }
+em { font-family: var(--serif); font-style: normal; font-weight: 400; }
 .container { width: min(1280px, calc(100% - 128px)); margin-inline: auto; }
 .section { padding: 100px 0; scroll-margin-top: 80px; }
 .eyebrow { font-size: 9px; font-weight: 700; line-height: 1.7; }

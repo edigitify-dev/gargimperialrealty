@@ -10,7 +10,7 @@
 .about-title { position: absolute; top: 28%; width: 100%; z-index: 2; text-align: center; pointer-events: none; }
 .about-title h2 { font-size: clamp(62px, 8.3vw, 132px); font-weight: 450; line-height: .99; color: var(--brand-primary); }
 .about-title h2 > span, .about-title h2 > em { display: block; }
-.about-title h2 > .kinetic-line-italic { font-size: 1.08em; line-height: 1.05; margin-top: 7px; }
+.about-title h2 > .kinetic-line-emphasis { font-size: 1.08em; line-height: 1.05; margin-top: 7px; }
 .about-chapter[data-ready="false"] .about-title { opacity: 0; }
 .about-static .about-title { transform: none !important; opacity: 1 !important; }
 
@@ -31,7 +31,7 @@
   .about-sticky { top: 78px; height: calc(100svh - 78px); min-height: 0; }
   .about-title { top: 32%; padding-inline: 22px; }
   .about-title h2 { font-size: clamp(34px, 9.5vw, 64px); line-height: 1.1; font-weight: 450; }
-  .about-title h2 > .kinetic-line-italic { font-size: 1.06em; line-height: 1.15; margin-top: 6px; }
+  .about-title h2 > .kinetic-line-emphasis { font-size: 1.06em; line-height: 1.15; margin-top: 6px; }
   .about-scene-image { object-position: center top; }
 }
 @media (prefers-reduced-motion: reduce) {

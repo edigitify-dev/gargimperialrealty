@@ -28,7 +28,7 @@ export default function AboutScene() {
             <div className="about-sky-wash" aria-hidden="true" />
 
             <motion.div className="about-title" style={reduced ? undefined : { y: titleY, opacity: titleOpacity }}>
-              <KineticText id="about-heading" progress={scrollYProgress} enter={[.38, .64]} lines={[{ text: "Your vision." }, { text: "Finds its ground.", italic: true }]} />
+              <KineticText id="about-heading" progress={scrollYProgress} enter={[.38, .64]} lines={[{ text: "Your vision." }, { text: "Finds its ground.", emphasis: true }]} />
             </motion.div>
 
             <div className="about-architecture" aria-hidden="true">

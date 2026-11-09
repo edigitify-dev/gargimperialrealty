@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { bodoniModa, manrope } from "./fonts";
+import { montserrat, openSans } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,5 +16,5 @@ export const metadata: Metadata = {
 };
 export const viewport: Viewport = { themeColor: "#004737" };
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en" className={`${bodoniModa.variable} ${manrope.variable}`}><body>{children}</body></html>;
+  return <html lang="en" className={`${montserrat.variable} ${openSans.variable}`}><body>{children}</body></html>;
 }

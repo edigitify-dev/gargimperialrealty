@@ -21,7 +21,7 @@ export default function MasterplanSection() {
             <KineticText lines={[
               { text: "Every great future" },
               { text: "starts with a" },
-              { text: "thoughtful plan.", italic: true },
+              { text: "thoughtful plan.", emphasis: true },
             ]} />
             <p className="muted">
               Beyond individual plots, we see the whole picture. Connected streets, generous green

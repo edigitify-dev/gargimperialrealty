@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useSceneTimeline } from "@/hooks/use-scene-timeline";
 import "./scene-motion.css";
 
-type Line = { text: string; accent?: boolean; italic?: boolean };
+type Line = { text: string; accent?: boolean; emphasis?: boolean };
 type Props = {
   lines: Line[];
   as?: "h2" | "p";
@@ -38,7 +38,7 @@ export default function KineticText({ lines, as = "h2", id, className = "", prog
   let index = 0;
   const content = <>
     {as === "p" && <span className="motion-sr-only">{label}</span>}
-    {lines.map((line, lineIndex) => <span key={lineIndex} aria-hidden="true" className={`kinetic-line ${line.accent ? "kinetic-line-accent" : ""} ${line.italic ? "kinetic-line-italic" : ""}`}>
+    {lines.map((line, lineIndex) => <span key={lineIndex} aria-hidden="true" className={`kinetic-line ${line.accent ? "kinetic-line-accent" : ""} ${line.emphasis ? "kinetic-line-emphasis" : ""}`}>
       {line.text.split(" ").map((word, wordIndex) => <span key={wordIndex}><Word text={word} index={index++} count={count} progress={progress} reduced={reduced} enter={enter} headline={as === "h2"} />{wordIndex < line.text.split(" ").length - 1 ? " " : null}</span>)}
     </span>)}
   </>;
